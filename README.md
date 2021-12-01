@@ -6,8 +6,8 @@ This is a basic ATM machine that enables you to:
 
 
     1. Create an account by entering a username and password.
-    2. Chosse an operation (withdraw, check balance, deposit).
-    3. New Features comming soon!!!
+    2. Choose an operation (withdraw, check balance, deposit).
+    3. New Features coming soon!!!
 
 
 To start the program run the **main.py** file. 
