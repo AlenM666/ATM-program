@@ -1,9 +1,4 @@
-import time
-import os
-import sys
-
 balance = 5000
-
 class ATM:
     def __init__(self, username, passwd):
         self.username = username
@@ -11,17 +6,14 @@ class ATM:
 
     def withdraw(self, balance,withdraw_amount):
         wav = balance - withdraw_amount
-        return f"You have {wav} left in your accoutn. "
+        return f"You have {wav}€ left in your accoutn. "
 
-    def deposit(self):
-        pass
+    def deposit(self, balance, deposit_amount):
+        dav = balance + deposit_amount
+        return f"You have deposited {deposit_amount}€ and now you have {dav}€."
 
-    def check_balance(self):
-        pass
-
-
-    def login(self):
-        pass
+    def check_balance(self, balance):
+        return f"You have {balance}€ in you account."
 
 
 print("****************************************************************************")
@@ -32,15 +24,10 @@ print("*************************************************************************
 print("\n")
 print("************************* PLEASE CREATE NEW USER **************************")
 
-
-
 #new user
 user1 = ATM(input("Enter username: "), int(input("Enter password: ")))
 
-new_user = user1.username
-new_passwd = user1.passwd
 print("New user crated")
-#os.system("clear")
 
 print("\n")
 while True:
@@ -54,9 +41,17 @@ while True:
         withdraw_amount = int(input("Enter the amount you would like to withdraw: "))
         print(user1.withdraw(balance, withdraw_amount))
         break
+    elif choice == 2:
+        deposit_amount = int(input("Enter the amout you wish to deposit in your account: "))
+        print(user1.deposit(balance, deposit_amount))
+        break
+    elif choice == 3:
+        print(user1.check_balance(balance))
+        break
     else:
-        print("invalid")
-    continue
+        print("\n")
+        continue
+
 
 
 
